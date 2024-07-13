@@ -1,0 +1,36 @@
+.bookings {
+    max-width: 800px;
+    margin: 50px auto;
+  
+    h2 {
+      color: var(--primary-color);
+      text-align: center;
+    }
+  
+    .booking-list {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+  
+      .booking-item {
+        border-bottom: 1px solid #eee;
+        padding: 15px 0;
+  
+        &:last-child {
+          border-bottom: none;
+        }
+  
+        .room-name {
+          font-weight: bold;
+          color: var(--primary-color);
+        }
+  
+        .dates {
+          margin-top: 10px;
+          font-size: 0.9em;
+          color: #666;
+        }
+      }
+    }
+  }

@@ -1,0 +1,14 @@
+<nav>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      
+      <!-- Options for logged-in users -->
+      <li *ngIf="authService.isLoggedIn()"><a routerLink="/rooms" routerLinkActive="active">Rooms</a></li>
+      <li *ngIf="authService.isLoggedIn()"><a class="welcome-message">Welcome, {{ currentUser }}</a></li>
+      <li *ngIf="authService.isLoggedIn()"><a (click)="logout()">Logout</a></li>
+      
+      <!-- Options for logged-out users -->
+      <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="!authService.isLoggedIn()"><a routerLink="/register" routerLinkActive="active">Register</a></li>
+    </ul>
+  </nav>

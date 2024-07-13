@@ -1,0 +1,13 @@
+<div class="bookings">
+    <h2>Your Bookings</h2>
+    <div class="booking-list">
+      <div class="booking-item" *ngFor="let booking of bookings">
+        <p class="room-name">Room: {{ booking.room.name }}</p>
+        <p class="dates">
+          Check-in: {{ booking.checkInDate | date }}
+          <br>
+          Check-out: {{ booking.checkOutDate | date }}
+        </p>
+      </div>
+    </div>
+  </div>

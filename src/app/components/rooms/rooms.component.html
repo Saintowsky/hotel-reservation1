@@ -1,0 +1,8 @@
+<div class="rooms-list">
+    <div class="room-card" *ngFor="let room of rooms">
+      <h3>{{ room.name }}</h3>
+      <p>{{ room.description }}</p>
+      <p class="price">Price: ${{ room.price }}</p>
+      <a [routerLink]="['/rooms', room._id]">View Details</a>
+    </div>
+  </div>

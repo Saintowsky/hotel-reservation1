@@ -1,0 +1,39 @@
+.rooms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  
+    .room-card {
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      transition: transform 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-5px);
+      }
+  
+      h3 {
+        color: var(--primary-color);
+      }
+  
+      .price {
+        font-weight: bold;
+        color: var(--secondary-color);
+      }
+  
+      a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: bold;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }

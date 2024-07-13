@@ -1,0 +1,39 @@
+nav {
+    background-color: #3f51b5;
+    padding: 10px 0;
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-start;
+  
+      li {
+        margin: 0 15px;
+  
+        a {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+          transition: opacity 0.3s ease;
+          cursor: pointer;
+  
+          &:hover {
+            opacity: 0.8;
+          }
+  
+          &.active {
+            font-weight: bold;
+          }
+        }
+  
+        .welcome-message {
+          cursor: default;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
