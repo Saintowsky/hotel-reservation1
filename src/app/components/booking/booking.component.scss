@@ -1,36 +1,88 @@
-.bookings {
-    max-width: 800px;
-    margin: 50px auto;
-  
-    h2 {
-      color: var(--primary-color);
+.booking-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .booking-list {
+    .no-bookings {
       text-align: center;
-    }
-  
-    .booking-list {
-      background-color: var(--white);
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
-  
-      .booking-item {
-        border-bottom: 1px solid #eee;
-        padding: 15px 0;
-  
-        &:last-child {
-          border-bottom: none;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+      font-style: italic;
+      color: #666;
+    }
+
+    .booking-card {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+
+      .booking-header {
+        background-color: #3f51b5;
+        color: #fff;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+          margin: 0;
+          font-size: 18px;
         }
-  
-        .room-name {
+
+        .booking-status {
+          background-color: #4caf50;
+          padding: 5px 10px;
+          border-radius: 3px;
+          font-size: 12px;
           font-weight: bold;
-          color: var(--primary-color);
         }
-  
-        .dates {
-          margin-top: 10px;
-          font-size: 0.9em;
-          color: #666;
+      }
+
+      .booking-details {
+        padding: 15px;
+
+        .booking-dates {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          .date-group {
+            .date-label {
+              font-weight: bold;
+              color: #666;
+            }
+
+            .date-value {
+              margin-left: 5px;
+            }
+          }
+        }
+
+        .booking-price {
+          text-align: right;
+          font-size: 18px;
+
+          .price-label {
+            font-weight: bold;
+            color: #666;
+          }
+
+          .price-value {
+            margin-left: 5px;
+            color: #3f51b5;
+          }
         }
       }
     }
   }
+}

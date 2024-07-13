@@ -11,7 +11,7 @@ export class BookingService {
   constructor(private http: HttpClient) { }
 
   createBooking(booking: any): Observable<any> {
-    return this.http.post(this.apiUrl, booking);
+    return this.http.post(`${this.apiUrl}`, booking);
   }
 
   getUserBookings(): Observable<any> {

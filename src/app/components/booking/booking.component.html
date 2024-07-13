@@ -1,13 +1,30 @@
-<div class="bookings">
-    <h2>Your Bookings</h2>
-    <div class="booking-list">
-      <div class="booking-item" *ngFor="let booking of bookings">
-        <p class="room-name">Room: {{ booking.room.name }}</p>
-        <p class="dates">
-          Check-in: {{ booking.checkInDate | date }}
-          <br>
-          Check-out: {{ booking.checkOutDate | date }}
-        </p>
+<div class="booking-container">
+  <h2>Your Bookings</h2>
+  <div class="booking-list">
+    <div *ngIf="bookings.length === 0" class="no-bookings">
+      You have no bookings yet.
+    </div>
+    <div *ngFor="let booking of bookings" class="booking-card">
+      <div class="booking-header">
+        <h3>{{ booking.room.name }}</h3>
+        <span class="booking-status">Confirmed</span>
+      </div>
+      <div class="booking-details">
+        <div class="booking-dates">
+          <div class="date-group">
+            <span class="date-label">Check-in:</span>
+            <span class="date-value">{{ booking.checkInDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="date-group">
+            <span class="date-label">Check-out:</span>
+            <span class="date-value">{{ booking.checkOutDate | date:'mediumDate' }}</span>
+          </div>
+        </div>
+        <div class="booking-price">
+          <span class="price-label">Total:</span>
+          <span class="price-value">${{ calculateTotalPrice(booking) }}</span>
+        </div>
       </div>
     </div>
   </div>
+</div>

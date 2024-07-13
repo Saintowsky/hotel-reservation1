@@ -6,6 +6,7 @@
       <li *ngIf="authService.isLoggedIn()"><a routerLink="/rooms" routerLinkActive="active">Rooms</a></li>
       <li *ngIf="authService.isLoggedIn()"><a class="welcome-message">Welcome, {{ currentUser }}</a></li>
       <li *ngIf="authService.isLoggedIn()"><a (click)="logout()">Logout</a></li>
+      <li *ngIf="authService.isLoggedIn()"><a routerLink="/booking" routerLinkActive="active">My Bookings</a></li>
       
       <!-- Options for logged-out users -->
       <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login" routerLinkActive="active">Login</a></li>

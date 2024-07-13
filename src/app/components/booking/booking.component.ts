@@ -1,21 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.scss'],
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <h2>Your Bookings</h2>
-    <div *ngFor="let booking of bookings">
-      <p>Room: {{ booking.room.name }}</p>
-      <p>Check-in: {{ booking.checkInDate | date }}</p>
-      <p>Check-out: {{ booking.checkOutDate | date }}</p>
-    </div>
-  `
+  imports: [CommonModule]
 })
 export class BookingComponent implements OnInit {
   bookings: any[] = [];
@@ -31,5 +23,12 @@ export class BookingComponent implements OnInit {
         console.error('Error fetching bookings:', error);
       }
     );
+  }
+
+  calculateTotalPrice(booking: any): number {
+    const checkIn = new Date(booking.checkInDate);
+    const checkOut = new Date(booking.checkOutDate);
+    const nights = Math.ceil((checkOut.getTime() - checkIn.getTime()) / (1000 * 3600 * 24));
+    return nights * booking.room.price;
   }
 }

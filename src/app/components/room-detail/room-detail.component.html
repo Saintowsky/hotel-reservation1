@@ -1,6 +1,17 @@
-<div class="room-detail" *ngIf="room">
-    <h2>{{ room.name }}</h2>
-    <p>{{ room.description }}</p>
-    <p class="price">Price: ${{ room.price }}</p>
-    <button class="btn btn-primary" (click)="bookRoom()">Book Now</button>
-  </div>
+<div *ngIf="room">
+  <h2>{{ room.name }}</h2>
+  <p>{{ room.description }}</p>
+  <p>Price: ${{ room.price }}</p>
+  
+  <form [formGroup]="bookingForm" (ngSubmit)="bookRoom()">
+    <div>
+      <label for="checkInDate">Check-in Date:</label>
+      <input type="date" id="checkInDate" formControlName="checkInDate">
+    </div>
+    <div>
+      <label for="checkOutDate">Check-out Date:</label>
+      <input type="date" id="checkOutDate" formControlName="checkOutDate">
+    </div>
+    <button type="submit" [disabled]="!bookingForm.valid">Book Now</button>
+  </form>
+</div>
