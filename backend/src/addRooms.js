@@ -9,7 +9,7 @@ mongoose.connect(config.MONGODB_URI)
 
 const sampleRooms = [
   {
-    name: "Deluxe King Room",
+    name: "Deluxe",
     description: "Spacious room with a king-size bed and city view",
     price: 200,
     available: true

@@ -1,3 +1,5 @@
+const Booking = require('../models/booking.model');
+
 exports.createBooking = async (req, res) => {
   try {
     console.log('Received booking data:', req.body);
@@ -13,5 +15,15 @@ exports.createBooking = async (req, res) => {
   } catch (error) {
     console.error('Error creating booking:', error);
     res.status(400).send({ message: error.message });
+  }
+};
+
+exports.getUserBookings = async (req, res) => {
+  try {
+    const bookings = await Booking.find({ user: req.userId }).populate('room');
+    res.send(bookings);
+  } catch (error) {
+    console.error('Error fetching user bookings:', error);
+    res.status(500).send({ message: error.message });
   }
 };
